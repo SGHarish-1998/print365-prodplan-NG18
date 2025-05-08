@@ -1,0 +1,59 @@
+<div class="overview-table-wrapper">
+  <table class="overview-table">
+    <thead>
+   
+      <tr class="column-header">
+        <th class="date-column">
+          <strong>{{ demoDate }}</strong> <span class="week-label">{{ demoWeek }}</span>
+        </th>
+        
+        <th class="text-right">Ordered copies</th>
+        <th>Editions</th>
+        <th>Format</th>
+        <th>Paper</th>
+        <th class="text-right">Weight</th>
+        <th>Job</th>
+        <th>Time</th>
+        <th class="text-right">Copies</th>
+        <th>Editions</th>
+      </tr>
+    </thead>
+
+    <tbody class="text-right">
+      <tr *ngFor="let booking of bookings" class="booking-row">
+        <td><a class="link" href="#">{{ booking.title }}</a></td>
+        <td>{{ booking.orderedCopies }}</td>
+        <td class="edition-cell border-left-color-2">
+          <span class="edition-group">
+            <a class="link">{{ booking.edition }}</a>
+            <span class="muted">{{ booking.editionCopies }}</span>
+          </span>
+        </td>
+        
+        <td class="border-left-color-1">{{ booking.format }}</td>
+        <td class="border-left-color-1"> {{ booking.paper }}</td>
+        <td class="border-left-color-1">{{ booking.weight }}</td>
+        <td class="border-left-color-2">
+          <div class="inner-field" *ngFor="let job of booking.jobs">
+            <a class="link">{{ job.name }}</a> <span class="muted inline">{{ job.date }}</span>
+          </div>
+        </td>
+        
+        <td class="border-left-color-1">
+          <div class="inner-field" *ngFor="let time of booking.times">{{ time }}</div>
+        </td>
+        <td class="border-left-color-1">
+          <div class="inner-field" *ngFor="let copy of booking.copies">{{ copy }}</div>
+        </td>
+        <td class="border-left-color-1">
+          <div class="inner-field" *ngFor="let ed of booking.lastEditions">
+            <span class="edition-tag">{{ ed }}</span>
+          </div>
+        </td>
+        
+        <!-- <td><span class="edition-tag">all</span></td> -->
+      </tr>
+      <tr class="row-separator"></tr>
+    </tbody>
+  </table>
+</div>

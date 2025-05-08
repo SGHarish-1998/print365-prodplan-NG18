@@ -1,0 +1,130 @@
+
+<div class="mwm-overview">
+  <form>
+    <div class="form-group">
+      <label class="control-label">Plant</label>
+      <select class="form-control" [(ngModel)]="form.plant" name="plant">
+        <option></option>
+
+        <optgroup label="Plant">
+          <option *ngFor="let plant of groupedPlants.plants" [ngValue]="plant">
+            {{ plant.name }}
+          </option>
+        </optgroup>
+
+        <optgroup label="Folder">
+          <option *ngFor="let folder of groupedPlants.folders" [ngValue]="folder">
+            {{ folder.name }}
+          </option>
+        </optgroup>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <!-- Header row with Dates + Publishing date -->
+      <div class="dates-header">
+        <label class="control-label">Dates</label>
+        <a class="text-link">Publishing date</a>
+      </div>
+    
+      <!-- Date inputs side by side -->
+      <div class="date-range-inputs">
+        <input
+          type="date"
+          class="form-control"
+          [(ngModel)]="form.dateRangeStart"
+          name="dateRangeStart"
+        />
+        <span class="date-separator"> - </span>
+        <input
+          type="date"
+          class="form-control"
+          [(ngModel)]="form.dateRangeEnd"
+          name="dateRangeEnd"
+        />
+      </div>
+    
+      <!-- Navigation icons aligned with space between -->
+      <div class="date-nav-icons">
+        <span class="icon-btn">&#8592;</span>
+        <span class="icon-btn">+</span>
+        <span class="icon-btn">+</span>
+        <span class="icon-btn">&#8594;</span>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="control-label">Filter</label>
+      <input type="text" class="form-control text-field" [(ngModel)]="form.textFilter" name="textFilter" />
+    </div>
+
+    <!-- FILTER OPTIONS DROPDOWN -->
+    <div class="form-group">
+      <label class="control-label">Filter options</label>
+      <select class="form-control" [(ngModel)]="form.filterOption" name="filterOption">
+        <option></option>
+        <option *ngFor="let option of filterOptions" [value]="option.value">
+          {{ option.label }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label">Format</label>
+      <select class="form-control" [(ngModel)]="form.format" name="format">
+        <option></option>
+        <option *ngFor="let option of format" [value]="option.value">
+          {{ option.label }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label">Paper</label>
+      <select class="form-control" [(ngModel)]="form.paper" name="paper">
+        <option></option>
+        <option *ngFor="let paper of paperOptions" [value]="paper">{{ paper }}</option>
+      </select>
+    </div>
+    
+
+    <div class="form-group">
+      <label class="control-label">Manager</label>
+      <select class="form-control" [(ngModel)]="form.manager" name="manager">
+        <option></option>
+        <option *ngFor="let manager of managerOptions" [value]="manager">{{ manager }}</option>
+      </select>
+    </div>
+    
+
+    <div class="form-group">
+      <label class="control-label">Table</label>
+      <select class="form-control" [(ngModel)]="form.table" name="table">
+        <option></option>
+    
+        <optgroup label="Personal">
+          <option *ngFor="let option of tableOptions.personal" [value]="option">
+            {{ option }}
+          </option>
+        </optgroup>
+    
+        <optgroup label="Shared">
+          <option *ngFor="let option of tableOptions.shared" [value]="option">
+            {{ option }}
+          </option>
+        </optgroup>
+    
+        <optgroup label="Standard">
+          <option *ngFor="let option of tableOptions.standard" [value]="option">
+            {{ option }}
+          </option>
+        </optgroup>
+      </select>
+    </div>
+    <div class="form-group text-right">
+      <button type="button" class="btn btn-default" (click)="resetForm()">Reset</button>
+    </div>
+    
+    
+  </form>
+</div>
