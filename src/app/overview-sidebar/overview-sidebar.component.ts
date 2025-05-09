@@ -1,12 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { OverviewTableColumnsModalComponent } from '../components/overview-table-columns-modal/overview-table-columns-modal.component';
 
 @Component({
   selector: 'app-overview-sidebar',
   standalone: true,
-  imports: [CommonModule, FormsModule, OverviewTableColumnsModalComponent],
+  imports: [CommonModule, FormsModule],
   templateUrl: './overview-sidebar.component.html',
   styleUrls: ['./overview-sidebar.component.scss']
 })

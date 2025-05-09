@@ -1,19 +1,7 @@
 body {
-  margin: 0 !important;
+  margin: 0;
   font-family: 'Droid Sans', serif;
 }
-
-// app-navmenu,
-// app-prodplan-navbar {
-//   display: block;
-//   width: 100%;
-//   height: 35px;
-//   background-color: #2b4c90;
-//   color: white;
-//   border-bottom: 1px solid #ccc;
-//   font-family: 'Droid Sans', serif;
-//   z-index: 1000;
-// }
 
 app-navmenu,
 app-prodplan-navbar {
@@ -28,13 +16,13 @@ app-prodplan-navbar {
 
 .layout {
   display: flex;
-  height: calc(100vh - 70px); // 35 navmenu + 35 prodplan-navbar
+  height: calc(100vh - 70px);
 }
 
 app-overview-sidebar {
   flex: 0 0 250px;
   border-right: 1px solid #ccc;
-  background-color: white;
+  background-color: #fff;
   height: 100%;
   overflow-y: auto;
 }
@@ -43,5 +31,5 @@ app-overview-sidebar {
   flex: 1;
   padding: 20px;
   overflow-y: auto;
-  background-color: white;
+  background-color: #fff;
 }

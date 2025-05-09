@@ -1,48 +1,49 @@
-// prodplan-navbar.component.ts
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-prodplan-navbar',
+  standalone: true,
   templateUrl: './prodplan-navbar.component.html',
   styleUrls: ['./prodplan-navbar.component.scss'],
-  standalone: true,
   imports: [FormsModule, CommonModule]
 })
 export class ProdplanNavbarComponent {
-  activeTab: string = 'overview';
+  activeTab = 'overview';
   dropdownOpen: string | null = null;
   isLoading = false;
+
   bookingName = 'Booking 1';
   dateStr = new Date().toLocaleDateString();
 
-  setActive(tab: string) {
+  setActive(tab: string): void {
     this.activeTab = tab;
     this.dropdownOpen = null;
   }
 
-  toggleDropdown(menu: string) {
+  toggleDropdown(menu: string): void {
     this.dropdownOpen = this.dropdownOpen === menu ? null : menu;
   }
 
-  onRefresh() {
+  onRefresh(): void {
     this.isLoading = true;
-    setTimeout(() => this.isLoading = false, 1000);
+    setTimeout(() => (this.isLoading = false), 1000);
   }
 
-  printPage() {
+  printPage(): void {
     window.print();
   }
 
-  exportToExcel() {
+  exportToExcel(): void {
     console.log('Exporting to Excel...');
   }
 
-  toggleReporting() {
+  toggleReporting(): void {
     console.log('Toggling reporting view...');
   }
 
-  toggleAutoScroll() {
+  toggleAutoScroll(): void {
     console.log('Toggling auto-scroll...');
   }
 }

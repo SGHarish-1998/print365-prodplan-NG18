@@ -1,8 +1,8 @@
 <app-navmenu></app-navmenu>
 <app-prodplan-navbar></app-prodplan-navbar>
+
 <div class="layout">
   <app-overview-sidebar [selectedBooking]="selectedBooking"></app-overview-sidebar>
-
   <div class="main">
     <app-overview-table (bookingSelected)="updateSidebar($event)"></app-overview-table>
   </div>
