@@ -1,3 +1,4 @@
+// src/app/overview-sidebar/overview-sidebar.component.ts
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -6,7 +7,7 @@ import { OverviewTableColumnsModalComponent } from '../components/overview-table
 @Component({
   selector: 'app-overview-sidebar',
   standalone: true,
-  imports: [CommonModule, FormsModule,OverviewTableColumnsModalComponent],
+  imports: [CommonModule, FormsModule, OverviewTableColumnsModalComponent],
   templateUrl: './overview-sidebar.component.html',
   styleUrls: ['./overview-sidebar.component.scss']
 })
@@ -20,7 +21,7 @@ export class OverviewSidebarComponent {
     manager: '',
     table: '',
     dateRangeStart: '2025-05-06',
-  dateRangeEnd: '2025-05-06',
+    dateRangeEnd: '2025-05-06',
   };
 
   groupedPlants = {
@@ -46,7 +47,6 @@ export class OverviewSidebarComponent {
       { id: 'w-w70', name: 'W W-70' }
     ]
   };
-
 
   filterOptions = [
     { value: 'approved', label: 'Only Approved' },
@@ -107,12 +107,11 @@ export class OverviewSidebarComponent {
 
   showModal = false;
 
-openSettings() {
-  this.showModal = true;
-}
+  openSettings() {
+    this.showModal = true;
+  }
 
-closeModal() {
-  this.showModal = false;
-}
-  
+  closeModal() {
+    this.showModal = false;
+  }
 }
