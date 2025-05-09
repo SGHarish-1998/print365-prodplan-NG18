@@ -20,7 +20,8 @@
     </thead>
 
     <tbody class="text-right">
-      <tr *ngFor="let booking of bookings" class="booking-row">
+      <tr *ngFor="let booking of bookings;let i = index"  class="booking-row"  [class.row-highlight]="selectedRow === i"
+      (click)="highlightRow(i, booking.title); $event.stopPropagation()">
         <td><a class="link" href="#">{{ booking.title }}</a></td>
         <td>{{ booking.orderedCopies }}</td>
         <td class="edition-cell border-left-color-2">
@@ -56,4 +57,5 @@
       <tr class="row-separator"></tr>
     </tbody>
   </table>
+
 </div>

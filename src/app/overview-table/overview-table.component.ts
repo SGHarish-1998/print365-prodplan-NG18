@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, inject, OnInit, Output } from '@angular/core';
 import { PublicationService } from '../services/publication.service';
 
 @Component({
@@ -12,6 +12,10 @@ import { PublicationService } from '../services/publication.service';
 export class OverviewTableComponent implements OnInit {
   demoDate = '2025-05-07';
   demoWeek = 'Wednesday week 19';
+
+  selectedRow: number | null = null;
+
+  @Output() bookingSelected = new EventEmitter<string>();
 
 
   private publicationService = inject(PublicationService);
@@ -81,6 +85,16 @@ export class OverviewTableComponent implements OnInit {
     });
   }
 
+  highlightRow(index: number, title: string) {
+    if (this.selectedRow === index) {
+      this.selectedRow = null; // Unselect if the same row is clicked again
+      this.bookingSelected.emit(''); // Clear the sidebar
+    } else {
+      this.selectedRow = index; // Highlight the row
+      this.bookingSelected.emit(title); // Send to the sidebar
+    }
+  }
+
   // Helper: format time range like "16:45 - 17:25"
   formatTimeRange(start: string, end: string): string {
     if (!start || !end) return 'N/A';
@@ -94,6 +108,16 @@ export class OverviewTableComponent implements OnInit {
     if (!dateStr) return 'N/A';
     const date = new Date(dateStr);
     return `${date.getDate()}/${date.getMonth() + 1}`;
+  }
+
+    // ✅ Detect clicks outside the table
+    @HostListener('document:click', ['$event'])
+    onDocumentClick(event: Event) {
+    const target = event.target as HTMLElement;
+    if (!target.closest('.overview-table-wrapper') && !target.closest('.booking-details')) {
+      this.selectedRow = null; // Clear the sidebar if clicked outside
+      this.bookingSelected.emit(''); // Clear the sidebar
+    }
   }
 
 }

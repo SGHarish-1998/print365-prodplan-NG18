@@ -14,7 +14,12 @@ import { ProdplanNavbarComponent } from './prodplan-navbar/prodplan-navbar.compo
 })
 export class AppComponent {
   title = 'p365-prodplan';
+  selectedBooking: string | null = null;
 
+  // This is triggered when the row is clicked in app-overview-table
+  updateSidebar(bookingName: string) {
+    this.selectedBooking = bookingName;
+  }
   onDateSelected(date: Date | { start: Date, end: Date }) {
     console.log('Selected date(s):', date);
   }
