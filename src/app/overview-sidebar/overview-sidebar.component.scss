@@ -1,219 +1,129 @@
-// .form-group {
-//   margin-bottom: 15px;
-//   font-family: 'Droid Sans', serif !important;
-// }
-// label {
-//   display: block;
-//   max-width: 100%;
-//   margin-bottom: 5px;
-//   font-weight: bold;
-// }
+.mwm-overview {
+  width: 240px; /* This fits perfectly without overflow */
+  padding: 10px;
+  background-color: #f9f9f9;
+  overflow-x: hidden; /* Ensure no horizontal scroll */
+  border-right: none !important;
 
-// /* Match the legacy 26px tall, Bootstrap 3-styled dropdown */
-// .mwm-overview select.form-control {
-//   height: 26px;
-//   padding: 4px 6px;
-//   font-size: 13px;
-//   border-radius: 3px;
-//   border: 1px solid #ccc;
-//   color: #333;
-//   background-color: #fff;
-//   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-//   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-//   width: 90%;
-//   margin-left: 5px
-// }
+  .form-group {
+    margin-bottom: 15px;
 
-// .mwm-overview label.control-label {
-//   font-weight: bold;
-//   font-size: 13px;
-//   margin-bottom: 4px;
-//   display: block;
-// }
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 4px;
+      color: #333;
+    }
 
-// // body {
-// //   overflow-y: hidden;
-// //   font-family: 'Droid Sans', serif;
-// // }
-// .mwm-overview select.form-control:focus {
-//   border-color: #66afe9;
-//   outline: 0;
-//   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
-//   // background-color: #d9edf7;
-// }
+    select,
+    input {
+      height: 26px; /* Reduced height */
+      padding: 3px 5px;
+      font-size: 13px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      color: #333;
+      background-color: #fff;
+      width: 90%;
+      margin-left: 5px;
+      box-sizing: border-box;
+    }
+  }
 
-// // .mwm-overview select.form-control {
-// //   background-color: #fff; /* default */
-// //   transition: background-color 0.2s ease-in-out;
-// // }
+  
 
-// // .mwm-overview select.form-control:focus,
-// // .mwm-overview select.form-control:active,
-// // .mwm-overview select.form-control.ng-dirty {
-// //   background-color: #d9edf7; /* sky blue (Bootstrap 3 alert-info) */
-// // }
+  .dates-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+    .text-link {
+      color: #007bff;
+      font-size: 12px;
+      cursor: pointer;
+      margin-left: auto; /* Push it to the right */
+    }
+  }
 
-// .mwm-overview select.form-control {
-//   height: 26px;
-//   padding: 4px 6px;
-//   font-size: 13px;
-//   border-radius: 3px;
-//   border: 1px solid #ccc;
-//   background-color: #fff;
-//   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-// }
+  .date-range-inputs {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
 
+    input {
+      width: calc(45% - 2px); /* Slightly smaller to fit perfectly */
+      margin: 0;
+      padding: 3px 5px;
+      box-sizing: border-box; /* Ensures border and padding are included in width */
+    }
 
-.form-group {
-  margin-bottom: 15px;
-  font-family: 'Droid Sans', serif;
+    .date-separator {
+      margin: 0 2px;
+      font-size: 13px;
+    }
+  }
+  .btn-container {
+    display: flex;
+    justify-content: flex-end; /* Pushes button to the right */
+    margin-top: 10px;
+  }
+
+  /* Wrapper for the Table Field */
+.table-wrapper {
+  position: relative;
+  margin-bottom: 10px;
 }
 
-label,
-.mwm-overview label.control-label {
-  display: block;
-  max-width: 100%;
-  margin-bottom: 5px;
-  font-size: 13px;
-  font-weight: bold;
-}
-
-.mwm-overview select.form-control,
-.mwm-overview input.form-control {
-  height: 26px;
-  padding: 4px 6px;
-  font-size: 13px;
-  font-family: 'Droid Sans', serif;
-  border-radius: 3px;
-  border: 1px solid #ccc;
-  color: #333;
-  background-color: #fff;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  width: 90%;
+/* Reset Button Wrapper */
+.reset-button-wrapper {
+  display: flex;
+  justify-content: flex-start; /* Keep it aligned under Table */
   margin-left: 5px;
 }
 
-.mwm-overview select.form-control:focus,
-.mwm-overview input.form-control:focus {
-  border-color: #66afe9;
-  outline: 0;
-  box-shadow:
-    inset 0 1px 1px rgba(0, 0, 0, 0.075),
-    0 0 8px rgba(102, 175, 233, 0.6);
-  // background-color: #d9edf7; /* Optional: sky blue legacy style */
-}
-
-
-.text-field{
-  height: 15px !important;
-  width: 85% !important;
-}
-
-
-.dates-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 5px;
-
-  label {
-    font-size: 13px;
-    font-weight: bold;
-  }
-
-  .text-link {
-    color: #337ab7;
-    font-size: 13px;
-    cursor: pointer;
-  }
-}
-
-.date-range-inputs {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin-bottom: 5px;
-
-  input.form-control {
-    height: 26px;
-    padding: 4px 6px;
-    font-size: 13px;
-    width: 45%;
-  }
-
-  .date-separator {
-    font-size: 13px;
-    font-weight: bold;
-  }
-}
-
-.date-nav-icons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 4px;
-
-  .icon-btn {
-    color: #337ab7;
-    font-size: 18px;
-    cursor: pointer;
-    padding: 0 4px;
-    user-select: none;
-    min-width: 24px;
-    text-align: center;
-  }
-}
-
-
-
-// .btn-reset {
-//   background-color: #f5f5f5;
-//   border: 1px solid #ccc;
-//   padding: 4px 12px;
-//   font-size: 13px;
-//   border-radius: 4px;
-//   color: #333;
-//   cursor: pointer;
-//   font-family: 'Droid Sans', sans-serif;
-//   transition: background-color 0.2s;
-
-//   &:hover {
-//     background-color: #e6e6e6;
-//   }
-// }
-
-.text-right {
-  text-align: right;
-}
-
-
-.btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
+/* Reset Button Styling */
+.btn-reset {
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  padding: 5x 15px;
   font-size: 14px;
-  font-weight: normal;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
   border-radius: 4px;
-  font-family: 'Droid Sans', sans-serif;
-  margin-right: 1px;
-}
-
-.btn-default {
   color: #333;
-  background-color: #fff;
-  border-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: 'Droid Sans', sans-serif;
+  width: 90%;   /* Align with other form fields */
+  max-width: 100%; /* Prevent overflow */
+
+  &:hover {
+    background-color: #e2e6ea;
+  }
+
+  &:active {
+    background-color: #d4d4d4;
+  }
 }
 
-.btn-default:hover {
-  background-color: #e6e6e6;
-  border-color: #adadad;
+
+
+  .date-nav-icons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    .icon-btn {
+      cursor: pointer;
+      font-size: 12px;
+      padding: 3px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      background-color: #fff;
+      
+
+      &:hover {
+        background-color: #eee;
+      }
+    }
+  }
 }

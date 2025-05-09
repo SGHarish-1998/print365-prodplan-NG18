@@ -14,4 +14,11 @@ $color-warning: #f0ad4e;
 $color-postit: #ffe;
 $color-shadow: rgba(0, 40, 80, 0.4);
 
+body::-webkit-scrollbar {
+    display: none;
+  }
+.mwm-overview::-webkit-scrollbar {
+    display: none;
+  }
+
 // EOF

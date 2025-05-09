@@ -1,11 +1,10 @@
-
 <div class="mwm-overview">
   <form>
+    <!-- Plant Dropdown -->
     <div class="form-group">
       <label class="control-label">Plant</label>
       <select class="form-control" [(ngModel)]="form.plant" name="plant">
         <option></option>
-
         <optgroup label="Plant">
           <option *ngFor="let plant of groupedPlants.plants" [ngValue]="plant">
             {{ plant.name }}
@@ -20,14 +19,13 @@
       </select>
     </div>
 
+    <!-- Dates with Publishing Link -->
     <div class="form-group">
-      <!-- Header row with Dates + Publishing date -->
       <div class="dates-header">
         <label class="control-label">Dates</label>
         <a class="text-link">Publishing date</a>
       </div>
-    
-      <!-- Date inputs side by side -->
+
       <div class="date-range-inputs">
         <input
           type="date"
@@ -43,22 +41,27 @@
           name="dateRangeEnd"
         />
       </div>
-    
-      <!-- Navigation icons aligned with space between -->
+
+      <!-- Navigation icons -->
       <div class="date-nav-icons">
-        <span class="icon-btn">&#8592;</span>
-        <span class="icon-btn">+</span>
-        <span class="icon-btn">+</span>
-        <span class="icon-btn">&#8594;</span>
+        <div class="date-nav-group">
+          <span class="icon-btn">&#8592;</span>
+          <span class="icon-btn">+</span>
+        </div>
+        <div class="date-nav-group">
+          <span class="icon-btn">+</span>
+          <span class="icon-btn">&#8594;</span>
+        </div>
       </div>
     </div>
-    
+
+    <!-- Filter -->
     <div class="form-group">
       <label class="control-label">Filter</label>
       <input type="text" class="form-control text-field" [(ngModel)]="form.textFilter" name="textFilter" />
     </div>
 
-    <!-- FILTER OPTIONS DROPDOWN -->
+    <!-- Filter Options Dropdown -->
     <div class="form-group">
       <label class="control-label">Filter options</label>
       <select class="form-control" [(ngModel)]="form.filterOption" name="filterOption">
@@ -69,6 +72,7 @@
       </select>
     </div>
 
+    <!-- Format Dropdown -->
     <div class="form-group">
       <label class="control-label">Format</label>
       <select class="form-control" [(ngModel)]="form.format" name="format">
@@ -79,6 +83,7 @@
       </select>
     </div>
 
+    <!-- Paper Dropdown -->
     <div class="form-group">
       <label class="control-label">Paper</label>
       <select class="form-control" [(ngModel)]="form.paper" name="paper">
@@ -86,8 +91,8 @@
         <option *ngFor="let paper of paperOptions" [value]="paper">{{ paper }}</option>
       </select>
     </div>
-    
 
+    <!-- Manager Dropdown -->
     <div class="form-group">
       <label class="control-label">Manager</label>
       <select class="form-control" [(ngModel)]="form.manager" name="manager">
@@ -95,36 +100,41 @@
         <option *ngFor="let manager of managerOptions" [value]="manager">{{ manager }}</option>
       </select>
     </div>
-    
 
-    <div class="form-group">
+    <!-- Table Dropdown -->
+    <div class="form-group ">
       <label class="control-label">Table</label>
       <select class="form-control" [(ngModel)]="form.table" name="table">
         <option></option>
-    
         <optgroup label="Personal">
           <option *ngFor="let option of tableOptions.personal" [value]="option">
             {{ option }}
           </option>
         </optgroup>
-    
+
         <optgroup label="Shared">
           <option *ngFor="let option of tableOptions.shared" [value]="option">
             {{ option }}
           </option>
         </optgroup>
-    
+
         <optgroup label="Standard">
           <option *ngFor="let option of tableOptions.standard" [value]="option">
             {{ option }}
           </option>
         </optgroup>
       </select>
+      <i class="fas fa-cog settings-icon" (click)="openSettings()"></i>
+
+      <app-overview-table-columns-modal 
+        *ngIf="showModal" 
+        (close)="closeModal()">
+      </app-overview-table-columns-modal>
     </div>
-    <div class="form-group text-right">
-      <button type="button" class="btn btn-default" (click)="resetForm()">Reset</button>
-    </div>
-    
-    
+
+    <!-- Reset Button -->
+    <div class="form-group reset-button-wrapper">
+  <button type="button" class="btn btn-reset" (click)="resetForm()">Reset</button>
+</div>
   </form>
 </div>

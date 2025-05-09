@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { OverviewTableColumnsModalComponent } from '../components/overview-table-columns-modal/overview-table-columns-modal.component';
 
 @Component({
   selector: 'app-overview-sidebar',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,OverviewTableColumnsModalComponent],
   templateUrl: './overview-sidebar.component.html',
   styleUrls: ['./overview-sidebar.component.scss']
 })
@@ -103,5 +104,15 @@ export class OverviewSidebarComponent {
       dateRangeEnd: '2025-05-06'
     };
   }
+
+  showModal = false;
+
+openSettings() {
+  this.showModal = true;
+}
+
+closeModal() {
+  this.showModal = false;
+}
   
 }
