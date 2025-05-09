@@ -1,19 +1,9 @@
 <app-navmenu></app-navmenu>
 
 <div class="layout">
-  <app-overview-sidebar></app-overview-sidebar>
+  <app-overview-sidebar [selectedBooking]="selectedBooking"></app-overview-sidebar>
 
   <div class="main">
-    <app-overview-table></app-overview-table>
+    <app-overview-table (bookingSelected)="updateSidebar($event)"></app-overview-table>
   </div>
 </div>
-
-<!-- 
-<div class="layout">
-  <app-overview-sidebar></app-overview-sidebar>
-
-  <div class="main">
-   
-    <app-overview-table></app-overview-table>
-  </div>
-</div> -->

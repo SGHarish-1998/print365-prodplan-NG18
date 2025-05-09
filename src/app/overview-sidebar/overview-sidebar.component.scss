@@ -69,6 +69,50 @@
     margin-top: 10px;
   }
 
+  .booking-details {
+    margin-top: 15px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  
+    .booking-title {
+      font-size: 16px;
+      margin-bottom: 15px;
+      color: #2b4c90;
+      
+      .company-name {
+        display: block;
+        font-size: 14px;
+        color: #007acc;
+        margin-bottom: 5px;
+      }
+    }
+  
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+  
+      button {
+        background-color: white;
+        color: black;
+        border: 1px solid #ccc;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        text-align: center; /* Center-align text */
+        width: 100%;
+  
+        &:hover {
+          background-color: #f3f6fb;
+        }
+      }
+    }
+  }
+  
+
   /* Wrapper for the Table Field */
 .table-wrapper {
   position: relative;

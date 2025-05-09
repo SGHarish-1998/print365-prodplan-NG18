@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { OverviewTableColumnsModalComponent } from '../components/overview-table-columns-modal/overview-table-columns-modal.component';
@@ -22,6 +22,8 @@ export class OverviewSidebarComponent {
     dateRangeStart: '2025-05-06',
   dateRangeEnd: '2025-05-06',
   };
+
+  @Input() selectedBooking: string | null = null;
 
   groupedPlants = {
     plants: [

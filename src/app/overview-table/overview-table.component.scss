@@ -4,6 +4,22 @@
     background: #fff;
 }
 
+.overview-table .booking-row:hover {
+    background-color: #fff9c4 !important;  /* Light yellow */
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  /* Row selected effect */
+  .row-highlight {
+    background-color: #bbdefb !important; /* Light blue */
+    transition: background-color 0.3s ease;
+  }
+  
+  .overview-table .booking-row:hover.row-highlight {
+    background-color: #bbdefb !important;
+  }
+
 .overview-table {
     width: 100%;
     border-collapse: collapse;

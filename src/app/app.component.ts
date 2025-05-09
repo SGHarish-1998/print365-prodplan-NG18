@@ -12,4 +12,10 @@ import { NavmenuComponent } from './navmenu/navmenu.component';
 })
 export class AppComponent {
   title = 'p365-prodplan';
+  selectedBooking: string | null = null;
+
+  // This is triggered when the row is clicked in app-overview-table
+  updateSidebar(bookingName: string) {
+    this.selectedBooking = bookingName;
+  }
 }

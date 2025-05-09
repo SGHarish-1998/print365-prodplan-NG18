@@ -137,4 +137,21 @@
   <button type="button" class="btn btn-reset" (click)="resetForm()">Reset</button>
 </div>
   </form>
+
+
+  <div *ngIf="selectedBooking" class="booking-details">
+    <div class="booking-title">
+      <span class="company-name">Salzburger Nachrichten GmbH & Co KG</span>
+      <strong>{{ selectedBooking }}</strong>
+    </div>
+  
+    <div class="button-group">
+      <button class="btn btn-primary">View Booking</button>
+      <button class="btn btn-primary">Work Order</button>
+      <button class="btn btn-primary">Reporting</button>
+      <button class="btn btn-primary">Create New Complaint</button>
+      <button class="btn btn-primary">Edit Booking</button>
+      <button class="btn btn-primary">Export Booking</button>
+    </div>
+  </div>
 </div>
